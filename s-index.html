@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder: College to Career & Study Planner</title>
+     <link rel="stylesheet" href="s-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-road logo-icon"></i>
+                <span>Pathfinder</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="roadmap">College to Job Roadmap</a></li>
+                    <li><a href="#" class="nav-link" data-page="planner">Smart Study Planner</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <div class="hero">
+                <h1>Your Path From College to Career</h1>
+                <p>Get a personalized roadmap to guide you through college and into your dream job, plus a smart study planner to optimize your productivity.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn nav-link" data-page="roadmap">Create Your Roadmap</a>
+                    <a href="#" class="btn nav-link" data-page="planner">Try Study Planner</a>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="form-container">
+                    <h2 class="form-title"><i class="fas fa-map-signs"></i> College to Job Roadmap</h2>
+                    <p>Get a personalized step-by-step guide from your first year to final year based on your domain and time duration.</p>
+                    <div class="ai-thinking" style="margin: 1rem 0;">
+                        <span>AI-Powered</span>
+                        <div class="thinking-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-full nav-link" data-page="roadmap" style="margin-top: 1.5rem;">Get Started</a>
+                </div>
+                
+                <div class="form-container">
+                    <h2 class="form-title"><i class="fas fa-calendar-alt"></i> Smart Study Planner</h2>
+                    <p>Create personalized study plans with daily/weekly strategies, topics to cover, and tips. Includes exam countdown timer.</p>
+                    <div class="ai-thinking" style="margin: 1rem 0;">
+                        <span>AI-Powered</span>
+                        <div class="thinking-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-full nav-link" data-page="planner" style="margin-top: 1.5rem;">Start Planning</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap Page -->
+        <div class="page" id="roadmap-page">
+            <h1 class="form-title"><i class="fas fa-road"></i> College to Job Roadmap Generator</h1>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Fill in your details below to get a personalized roadmap from your first year to final year.</p>
+            
+            <div class="form-container">
+                <form id="roadmapForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentYear"><i class="fas fa-calendar"></i> Current Academic Year</label>
+                            <select id="currentYear" required>
+                                <option value="" disabled selected>Select your current year</option>
+                                <option value="1">First Year</option>
+                                <option value="2">Second Year</option>
+                                <option value="3">Third Year</option>
+                                <option value="4">Fourth Year</option>
+                               
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="domain"><i class="fas fa-briefcase"></i> Career Domain</label>
+                            <select id="domain" required>
+                                <option value="" disabled selected>Select your target domain</option>
+                                <option value="software">Software Engineering</option>
+                                <option value="data">Data Science / Analytics</option>
+                                <option value="finance">Finance / Banking</option>
+                                <option value="marketing">Marketing / Digital Marketing</option>
+                                <option value="healthcare">Healthcare / Medicine</option>
+                                <option value="design">Design / UI/UX</option>
+                                <option value="business">Business / Entrepreneurship</option>
+                                <option value="engineering">Engineering (Mechanical/Civil/Electrical)</option>
+                                <option value="research">Research & Academia</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration"><i class="fas fa-clock"></i> Duration (in years)</label>
+                            <select id="duration" required>
+                                <option value="1">1 Years</option>
+                                <option value="2" selected>2 Years</option>
+                                <option value="3">3 Years</option>
+                                <option value="4">4 Years</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="skills"><i class="fas fa-tools"></i> Current Skills (optional)</label>
+                            <input type="text" id="skills" placeholder="e.g., Python, Communication, Problem Solving, JavaScript, Data Analysis">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals"><i class="fas fa-bullseye"></i> Career Goals (optional)</label>
+                        <textarea id="goals" rows="3" placeholder="Describe your career goals, target companies, salary expectations, etc..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="university"><i class="fas fa-university"></i> University Type (optional)</label>
+                        <select id="university">
+                            <option value="" selected>Select your university type</option>
+                            <option value="tier1">Tier 1 / Premier Institute</option>
+                            <option value="tier2">Tier 2 / State University</option>
+                            <option value="tier3">Tier 3 / Private College</option>
+                            <option value="online">Online / Distance Learning</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-full">
+                        <i class="fas fa-magic"></i> Generate AI-Powered Roadmap
+                    </button>
+                </form>
+            </div>
+            
+            <div class="loader" id="roadmapLoader">
+                <div class="loader-spinner"></div>
+                <div class="ai-thinking">
+                    <span>AI is creating your comprehensive roadmap</span>
+                    <div class="thinking-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <p>Analyzing your inputs and generating detailed step-by-step guidance...</p>
+            </div>
+            
+            <div class="results-container" id="roadmapResults">
+                <h2 class="results-title"><i class="fas fa-map-marked-alt"></i> Your Personalized AI-Powered Roadmap</h2>
+                <div id="roadmapSummary" style="background: linear-gradient(135deg, #f5f3ff, #e9d5ff); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <!-- Summary will be added here -->
+                </div>
+                
+                <div class="roadmap-container">
+                    <div id="roadmapTimeline" class="roadmap-timeline">
+                        <!-- Timeline will be generated here -->
+                    </div>
+                </div>
+                
+                <div class="progress-section">
+                    <h3 class="progress-title"><i class="fas fa-chart-line"></i> Skill Development Progress</h3>
+                    <div id="skillProgress" class="progress-grid">
+                        <!-- Skill progress will be added here -->
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f0f9ff; border-radius: 12px; border-left: 5px solid #0ea5e9;">
+                    <h4 style="color: #0369a1; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> AI Recommendations</h4>
+                    <div id="aiRecommendations">
+                        <!-- AI recommendations will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Planner Page -->
+        <div class="page" id="planner-page">
+            <h1 class="form-title"><i class="fas fa-calendar-alt"></i> Smart Study Planner</h1>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Create a personalized study plan with daily/weekly strategies and track your exam countdown.</p>
+            
+            <div class="exam-countdown" id="countdownContainer">
+                <h3><i class="fas fa-clock"></i> Exam Countdown</h3>
+                <p>Set your exam date to start the countdown timer</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <input type="date" id="examDate" style="padding: 10px; border-radius: 8px; border: none; width: 200px;">
+                    <button class="btn" id="setExamDateBtn">Set Exam Date</button>
+                </div>
+                
+                <div class="countdown-display" id="countdownDisplay" style="display: none;">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">0</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">0</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">0</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">0</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <form id="plannerForm">
+                    <div class="planner-controls">
+                        <div class="form-group">
+                            <label for="studyDuration"><i class="fas fa-clock"></i> Study Duration</label>
+                            <select id="studyDuration" required>
+                                <option value="7">1 Week</option>
+                                <option value="14" selected>2 Weeks</option>
+                                <option value="30">1 Month</option>
+                                <option value="60">2 Months</option>
+                                <option value="90">3 Months</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="studyGoal"><i class="fas fa-bullseye"></i> Study Goal / Subject</label>
+                            <input type="text" id="studyGoal" required placeholder="e.g., Computer Science, Mathematics, Biology, Physics, Chemistry">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="planType"><i class="fas fa-calendar"></i> Plan Type</label>
+                            <select id="planType" required>
+                                <option value="daily" selected>Daily Plan</option>
+                                <option value="weekly">Weekly Plan</option>
+                                <option value="monthly">Monthly Plan</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studyTopics"><i class="fas fa-book"></i> Topics to Cover (optional)</label>
+                            <textarea id="studyTopics" rows="3" placeholder="List specific topics you want to cover, separated by commas..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dailyHours"><i class="fas fa-clock"></i> Daily Study Hours</label>
+                            <select id="dailyHours">
+                                <option value="2">2 hours/day</option>
+                                <option value="3" selected>3 hours/day</option>
+                                <option value="4">4 hours/day</option>
+                                <option value="5">5+ hours/day</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="learningStyle"><i class="fas fa-brain"></i> Learning Style (optional)</label>
+                        <select id="learningStyle">
+                            <option value="" selected>Select your preferred learning style</option>
+                            <option value="visual">Visual Learner</option>
+                            <option value="auditory">Auditory Learner</option>
+                            <option value="reading">Reading/Writing Learner</option>
+                            <option value="kinesthetic">Kinesthetic/Hands-on Learner</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-full">
+                        <i class="fas fa-calendar-plus"></i> Generate AI-Powered Study Plan
+                    </button>
+                </form>
+            </div>
+            
+            <div class="loader" id="plannerLoader">
+                <div class="loader-spinner"></div>
+                <div class="ai-thinking">
+                    <span>AI is creating your optimized study plan</span>
+                    <div class="thinking-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <p>Analyzing your subjects, time constraints, and learning preferences...</p>
+            </div>
+            
+            <div class="results-container" id="plannerResults">
+                <h2 class="results-title"><i class="fas fa-calendar-check"></i> Your AI-Powered Study Plan</h2>
+                <div id="studyPlanOverview" style="background: linear-gradient(135deg, #f5f3ff, #e9d5ff); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <!-- Overview will be added here -->
+                </div>
+                
+                <div id="studyPlanResult" class="study-plan-result">
+                    <!-- Study plan will be generated here -->
+                </div>
+                
+                <div class="study-tips-box" style="margin-top: 2rem;">
+                    <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> AI Study Tips & Strategies</h4>
+                    <div id="studyTips">
+                        <!-- Study tips will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-road"></i> Pathfinder
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                    <a href="roadmap-page" class="nav-link" data-page="roadmap">Roadmap</a>
+                    <a href="#" class="nav-link" data-page="planner">Study Planner</a>
+                </div>
+                
+                <div class="copyright">
+                    &copy;  Pathfinder. All rights reserved. | AI-Powered Career & Study Planning
+                    <p>Designed with ❤️ by Rutuja Kshirsagar</p>
+                </div>
+                 
+            </div>
+        </div>
+    </footer>
+
+   <script src="s-script.js"></script>
+
+</body>
+</html>
